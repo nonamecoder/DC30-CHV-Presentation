@@ -1,0 +1,122 @@
+load config 
+MISO: 0b  0000  0000 	Write adr=0x00
+MISO: 0b  1010  0110     FC1H 	Freq. Config. 1 High Byte 	00h F1C15 F1C14 F1C13 F1C12 F1C11 F1C10 F1C9 F1C8 	xxxx xxxx b
+MISO: 0b  1000  0100     FC1L 	Freq. Config. 1 Low Byte 	01h F1C7 F1C6 F1C5 F1C4 F1C3 F1C2 F1C1 F1C0 		xxxx xxxx b   F_rf =433 657 070hz (set Bit E=0, Bit F=0)
+MISO: 0b  1011  0000     FC2H 	Freq. Config. 2 High Byte 	02h F2C15 F2C14 F2C13 F2C12 F2C11 F2C10 F2C9 F2C8 	xxxx xxxx b
+MISO: 0b  1011  0001     FC2L 	Freq. Config. 2 Low Byte 	03h F2C7 F2C6 F2C5 F2C4 F2C3 F2C2 F2C1 F2C0 		xxxx xxxx b	  F_rf =434 176 948hz  (set Bit E=0, Bit F=1)
+MISO: 0b  1010  0110     FC3H 	Freq. Config. 3 High Byte 	04h F3C15 F3C14 F3C13 F3C12 F3C11 F3C10 F3C9 F3C8 	xxxx xxxx b
+MISO: 0b  1000  0100     FC3L 	Freq. Config. 3 Low Byte 	05h F3C7 F3C6 F3C5 F3C4 F3C3 F3C2 F3C1 F3C0 		xxxx xxxx b   F_rf =433 657 070hz  (set Bit E=1, Bit F=0)
+MISO: 0b  1011  0000     FC4H 	Freq. Config. 4 High Byte 	06h F4C15 F4C14 F4C13 F4C12 F4C11 F4C10 F4C9 F4C8 	xxxx xxxx b
+MISO: 0b  1011  0001     FC4L 	Freq. Config. 4 Low Byte 	07h F4C7 F4C6 F4C5 F4C4 F4C3 F4C2 F4C1 F4C0 		xxxx xxxx b   F_rf =434 176 948hz  (set Bit E=1, Bit F=1)
+MISO: 0b  0000  0000     FCA 	MSB for all Freq. Conf. 	08h F4C17 F4C16 F3C17 F3C16 F2C17 F2C16 F1C17 F1C16 xxxx xxxx b	  F2C17 F2C16 00, F1C17 F1C16 00 
+MISO: 0b  0001  0100     FCON 	FSK modulation control 		09h FSK7 FSK6 FSK5 FSK4 FSK3 FSK2 FSK1 FSK0 		xxxx xxxx b   F_deviation =+- 15968Hz
+MISO: 0b  0000  1100     ACON0 	ASK modulation control 0 	0Ah ASK0 X X X AMH03 AMH02 AMH01 AMH00 				xxxx xxxx b
+MISO: 0b  0000  1100     ACON1 	ASK modulation control 1 	0Bh ASK1 X X X AMH13 AMH12 AMH11 AMH10 				xxxx xxxx b
+MISO: 0b  1000  0000     ACON2 	ASK modulation control 2 	0Ch CASC ENRAD ENPF ENSDO AML3 AML2 AML1 AML0 		x0xx xxxx b
+MISO: 0b  0000  0000     MRCON 	Modulation ramp control 	0Dh X RMP6 RMP5 RMP4 RMP3 RMP2 RMP1 RMP0 			xxxx xxxx b
+MISO: 0b  0000  1010     TXCON 	Transmitter Control 		0Eh PD PDCK XOSL FBSL PAM1 PAM0 ENXR PLLEN 			00xx xxx0 b
+MISO: 0b  0011  0011     BDSEL 	Baud rate Selection 		0Fh BD7 BD6 BD5 BD4 BD3 BD2 BD1 BD0 				xxxx xxxx b
+MISO: 0b  1010  1100     SCSEL 	Scaler Selection 			10h CSS2 CSS1 CSS0 PSC2 PSC1 PSC0 ASC1 ASC0 		1011 00xx b
+MISO: 0b  0000  0000     ATUNE 	Antenna Tuning 				11h ATI2 ATI1 ATI0 ATS4 ATS3 ATS2 ATS1 ATS0 		xxxx xxxx b
+MISO: 0b  0000  0000     TEST1 	TEST1 						12h X X X X X X X X
+MISO: 0b  0000  0000     TEST2 	TEST2 						13h X X X X X X X X
+
+MISO: 0b  0100  1100   Read adr=0x0C (ACON2)
+MISO: 0b  1000  0000
+
+MISO: 0b  0100  1100   Read adr=0x0C (ACON2)
+MISO: 0b  1000  0000
+
+MISO: 0b  0000  1100   Write adr=0x0C (ACON2)					 1    0		0    0  	0    0   0    0  (CASC=1 cascode stage switched to VDDA (regulated))
+MISO: 0b  1000  0000   ACON2 	ASK modulation control 2 	0Ch CASC ENRAD ENPF ENSDO AML3 AML2 AML1 AML0 		x0xx xxxx b
+
+MISO: 0b  0100  1110   Read adr=0x0E  (TXCON)  
+MISO: 0b  0000  1010
+
+MISO: 0b  0000  1110   Read adr=0x0E  (TXCON)
+MISO: 0b  0000  1010
+
+MISO: 0b  0100  1110   Read adr=0x0E  (TXCON)  
+MISO: 0b  0000  1010
+
+MISO: 0b  0000  1110   Read adr=0x0E  (TXCON)
+MISO: 0b  0000  1011
+
+MISO: 0b  0101  0000   Read adr=0x10  (SCSEL)
+MISO: 0b  1010  1100
+
+MISO: 0b  0100  1111   Read adr=0x0F  (BDSEL) 
+MISO: 0b  0011  0011   BDSEL 	Baud rate Selection DIV_bd=51  Baud rate= CLK/(2*(DIV_bd+1)= 15380 s/sec ????
+			AB	CDEF		
+MISO: 0b  1111  0100   Transmition  (Bit A=1: Synchronization of the data,  Bit B=1: The power amplifier is turned off after falling edge of EN (synchronized with baud rate). C=0 NRZ mode selected.Bit D = 1: Modulation and amplitude/power settings of
+ACON1 are applied.)  		D=1 !!FSK!!  E=0 F=0 SET F_rf= 433 657 070hz
+!!!!!!TRANSMIT!!!!!!!!
+
+MISO: 0b  0100  1100   Read adr=0x0C (ACON2)
+MISO: 0b  1000  0000
+
+MISO: 0b  0000  1100   Write adr=0x0C (ACON2)
+MISO: 0b  1000  0000
+
+MISO: 0b  0100  1110   Read adr=0x0E  (TXCON)
+MISO: 0b  0000  1011
+
+MISO: 0b  0000  1110   Write adr=0x0E  (TXCON)
+MISO: 0b  0000  1000
+
+MISO: 0b  0100  1110   Read adr=0x0E  (TXCON)  
+MISO: 0b  0000  1000
+
+MISO: 0b  0000  1110   Write adr=0x0E  (TXCON)					1	0	0	  0    1	0	  0	  0     (Power down, power mode=2 High power Low stability)
+MISO: 0b  1000  1000   TXCON 	Transmitter Control 		0Eh PD PDCK XOSL FBSL PAM1 PAM0 ENXR PLLEN 			00xx xxx0 b
+
+NEXT PARCEL
+
+MISO: 0b  0100  1110   Read adr=0x0E  (TXCON)
+MISO: 0b  0000  1000
+
+MISO: 0b  0000  1110   Write adr=0x0E  (TXCON)
+MISO: 0b  0000  1001
+
+MISO: 0b  0101  0000   Read adr=0x10  (SCSEL)
+MISO: 0b  1010  1100
+
+MISO: 0b  0100  1111   Read adr=0x0F  (BDSEL)
+MISO: 0b  0011  0011
+
+MISO: 0b  1111  0100   Transmition 
+!!!!!!TRANSMIT!!!!!!!!
+MISO: 0b  0100  1100   Read adr=0x0C (ACON2)
+MISO: 0b  1000  0000
+
+MISO: 0b  0000  1100   Write adr=0x0C (ACON2) 
+MISO: 0b  1000  0000
+
+MISO: 0b  0100  1110   Read adr=0x0E  (TXCON)
+MISO: 0b  0000  1001
+
+MISO: 0b  0000  1110   Write adr=0x0E  (TXCON) 
+MISO: 0b  0000  1000
+
+MISO: 0b  0100  1110   Read adr=0x0E  (TXCON)
+MISO: 0b  0000  1000   
+                       
+MISO: 0b  0000  1110   Write adr=0x0E  (TXCON)
+MISO: 0b  1000  1000
+
+
+
+
+
+
+
+
+
+Table 31 Frequency Selection (Bit E, Bit F)
+E F FCON                        Note
+0 0 FCC1H, FCC1L, F1C16, F1C17
+0 1 FCC2H, FCC2L, F2C16, F2C17
+1 0 FCC3H, FCC3L, F3C16, F3C17
+1 1 FCC4H, FCC4L, F4C16, F4C17
+
+
