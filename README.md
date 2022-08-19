@@ -7,6 +7,11 @@
 
 https://user-images.githubusercontent.com/5160055/185525745-c91f653f-4e16-4379-8901-a7086b349038.mov
 
+</br> **Slide 18**
+
+https://user-images.githubusercontent.com/5160055/185528152-36d980f2-7318-4cd6-a2bc-fb95fd42a6e8.mp4
+
+
 </br> **Slide 20**
 
 https://user-images.githubusercontent.com/5160055/185526017-68a3ba8c-0795-4404-9f91-32f85df4dc2d.mp4
