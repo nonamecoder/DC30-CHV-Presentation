@@ -1,6 +1,6 @@
 # DEFCON 30 Car Hacking Village Presentation files and more
 </br> This repository contains all the files from the Car Hacking Village Talk
-
+</br> The Flipper Zero firmware mentioned in the talk can be found [here](https://github.com/nonamecoder/FlipperZeroHondaFirmware)
 </br> Feel free to go through the files and follow along with the talk [here](https://www.youtube.com/watch?v=AxkRnUnvYWw)
 
 </br> You can reach out to me through [LinkedIn](https://www.linkedin.com/in/ayyappan-rajesh/) or via [email](mailto:arajesh@umassd.edu)!
