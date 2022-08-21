@@ -1,7 +1,9 @@
 # DEFCON 30 Car Hacking Village Presentation files and more
 </br> This repository contains all the files from the Car Hacking Village Talk
+
 </br> Feel free to go through the files and follow along with the talk [here](https://www.youtube.com/watch?v=AxkRnUnvYWw)
 
+</br> You can reach out to me through [LinkedIn](https://www.linkedin.com/in/ayyappan-rajesh/) or via [email](mailto:arajesh@umassd.edu)!
 # Videos
 </br> **Slide 17**
 
@@ -39,7 +41,6 @@ https://user-images.githubusercontent.com/5160055/185526391-4d510567-f725-477c-a
 </br> **Slide 46**
 
 https://user-images.githubusercontent.com/5160055/185527615-2ee1e01b-ea74-43ff-a9d4-96ff9989faf3.mp4
-
 
 
 
